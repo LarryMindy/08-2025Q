@@ -2,3 +2,203 @@
   <h2>🎸 Musical Milestones of the 60s & 70s 🎶</h2>
   <div id="quiz"></div>
 </div>
+body {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  padding: 20px;
+  color: #2c2c2c;
+}
+.quiz-container {
+  max-width: 700px;
+  margin: auto;
+  background-color: #fff8dc;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+h2 {
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+  color: #d35400;
+}
+.question {
+  font-weight: bold;
+  margin-top: 25px;
+  font-size: 1.1em;
+}
+.options button {
+  display: block;
+  margin: 8px 0;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0e68c;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.options button:hover {
+  background-color: #ffe066;
+}
+.explanation {
+  color: #006400;
+  margin-top: 10px;
+  font-style: italic;
+}
+const quiz = [
+  {
+    question: "Which iconic music festival, held in 1969, is often considered the pinnacle of the counterculture movement?",
+    options: ["Monterey Pop Festival", "Woodstock", "Isle of Wight Festival", "Altamont Free Concert"],
+    answer: 1,
+    explanation: "Woodstock, held in August 1969 in Bethel, NY, featured Hendrix, Joplin, and more. A symbol of peace, music, and rebellion."
+  },
+  {
+    question: "Which British band’s arrival in the United States in 1964 marked the beginning of the 'British Invasion'?",
+    options: ["The Rolling Stones", "The Beatles", "The Kinks", "The Who"],
+    answer: 1,
+    explanation: "The Beatles lit the fuse with their Ed Sullivan appearance—changing music history forever."
+  },
+  {
+    question: "What was the name of the 1971 concert organized by George Harrison to raise funds for Bangladesh relief efforts?",
+    options: ["Live Aid", "The Concert for Bangladesh", "Farm Aid", "The Peace Concert"],
+    answer: 1,
+    explanation: "George Harrison and Ravi Shankar led one of the first major benefit concerts."
+  },
+  {
+    question: "Which 1970 album by The Beatles is often referred to as their 'final' album, despite being recorded before 'Abbey Road'?",
+    options: ["Revolver", "Let It Be", "Sgt. Pepper's", "The White Album"],
+    answer: 1,
+    explanation: "'Let It Be' was released after the band split—making it their official goodbye."
+  },
+  {
+    question: "Which legendary guitarist performed a groundbreaking rendition of 'The Star-Spangled Banner' at Woodstock?",
+    options: ["Eric Clapton", "Jimi Hendrix", "Carlos Santana", "Pete Townshend"],
+    answer: 1,
+    explanation: "Hendrix's rendition was raw, powerful, and deeply symbolic of the era’s unrest."
+  },
+  {
+    question: "Which 1967 album by The Velvet Underground was produced by Andy Warhol and initially sold poorly but became hugely influential?",
+    options: ["Loaded", "White Light/White Heat", "The Velvet Underground & Nico", "Transformer"],
+    answer: 2,
+    explanation: "‘The Velvet Underground & Nico’ was groundbreaking in its raw sound and themes, and Warhol’s banana cover became iconic."
+  },
+  {
+    question: "Which Bob Dylan album marked his controversial shift from acoustic folk to electric rock?",
+    options: ["The Freewheelin’ Bob Dylan", "Bringing It All Back Home", "Highway 61 Revisited", "Blonde on Blonde"],
+    answer: 1,
+    explanation: "‘Bringing It All Back Home’ (1965) featured electric instruments on side one, shocking folk purists."
+  },
+  {
+    question: "Which band’s 1969 self-titled debut album featured a 10-minute track called 'In-A-Gadda-Da-Vida'?",
+    options: ["Iron Butterfly", "Blue Cheer", "Cream", "The Doors"],
+    answer: 0,
+    explanation: "Iron Butterfly’s psychedelic epic became a cult classic and a staple of early heavy rock."
+  },
+  {
+    question: "Which soul artist was known as the 'Godfather of Soul' and released the politically charged song 'Say It Loud – I’m Black and I’m Proud' in 1968?",
+    options: ["Curtis Mayfield", "James Brown", "Gil Scott-Heron", "Isaac Hayes"],
+    answer: 1,
+    explanation: "James Brown’s anthem became a rallying cry for the civil rights movement."
+  },
+  {
+    question: "Which 1973 Pink Floyd album spent over 900 weeks on the Billboard 200 chart?",
+    options: ["Wish You Were Here", "The Wall", "Meddle", "The Dark Side of the Moon"],
+    answer: 3,
+    explanation: "‘The Dark Side of the Moon’ is one of the best-selling and longest-charting albums of all time."
+  }
+];quiz.push(
+  {
+    question: "Which female artist released the 1971 album 'Blue', considered one of the greatest singer-songwriter albums ever?",
+    options: ["Carly Simon", "Carole King", "Joni Mitchell", "Janis Joplin"],
+    answer: 2,
+    explanation: "Joni Mitchell’s ‘Blue’ is revered for its emotional depth and lyrical brilliance."
+  },
+  {
+    question: "Which band’s 1970 debut album included the track 'Black Sabbath', often cited as the birth of heavy metal?",
+    options: ["Led Zeppelin", "Deep Purple", "Black Sabbath", "Uriah Heep"],
+    answer: 2,
+    explanation: "Black Sabbath’s dark, doomy sound laid the foundation for metal."
+  },
+  {
+    question: "Which 1969 Miles Davis album fused jazz with rock and funk, pioneering jazz fusion?",
+    options: ["Kind of Blue", "Sketches of Spain", "Bitches Brew", "In a Silent Way"],
+    answer: 2,
+    explanation: "‘Bitches Brew’ was revolutionary and controversial, blending electric instruments and improvisation."
+  },
+  {
+    question: "Which band released the concept album 'Tommy' in 1969, later adapted into a rock opera film?",
+    options: ["The Who", "Pink Floyd", "Genesis", "King Crimson"],
+    answer: 0,
+    explanation: "The Who’s ‘Tommy’ told the story of a deaf, dumb, and blind pinball wizard."
+  },
+  {
+    question: "Which 1975 Bruce Springsteen album featured the breakout hit 'Born to Run'?",
+    options: ["Greetings from Asbury Park, N.J.", "Darkness on the Edge of Town", "Born to Run", "The River"],
+    answer: 2,
+    explanation: "‘Born to Run’ catapulted Springsteen to stardom with its cinematic sound and ambition."
+  },
+  {
+    question: "Which 60s band was known for their elaborate harmonies and released the album 'Pet Sounds' in 1966?",
+    options: ["The Byrds", "The Beach Boys", "The Mamas & the Papas", "The Turtles"],
+    answer: 1,
+    explanation: "‘Pet Sounds’ by The Beach Boys is often cited as one of the most influential albums in pop history."
+  },
+  {
+    question: "Which artist released the protest song 'Ohio' in response to the Kent State shootings in 1970?",
+    options: ["Bob Dylan", "Neil Young", "Crosby, Stills & Nash", "Buffalo Springfield"],
+    answer: 1,
+    explanation: "Neil Young wrote ‘Ohio’ and recorded it with Crosby, Stills, Nash & Young just weeks after the tragedy."
+  },
+  {
+    question: "Which glam rock icon released 'The Rise and Fall of Ziggy Stardust and the Spiders from Mars' in 1972?",
+    options: ["Marc Bolan", "David Bowie", "Lou Reed", "Iggy Pop"],
+    answer: 1,
+    explanation: "David Bowie’s Ziggy Stardust persona became a symbol of glam rock’s theatrical flair."
+  },
+  {
+    question: "Which 1977 punk album by The Clash featured politically charged songs like 'White Riot'?",
+    options: ["Never Mind the Bollocks", "London Calling", "The Clash", "Combat Rock"],
+    answer: 2,
+    explanation: "‘The Clash’ was their debut album, raw and rebellious, setting the tone for UK punk."
+  },
+  {
+    question: "Which 1971 song by Don McLean is widely interpreted as a reflection on the death of Buddy Holly and the end of an era?",
+    options: ["Vincent", "American Pie", "Bye Bye Miss American Dream", "The Day the Music Died"],
+    answer: 1,
+    explanation: "‘American Pie’ is a poetic, symbolic journey through the changing landscape of American music and culture."
+  }
+);
+
+// 🚀 Render the quiz
+let quizDiv = document.getElementById('quiz');
+
+quiz.forEach((q, index) => {
+  let questionDiv = document.createElement('div');
+  questionDiv.className = 'question';
+  questionDiv.textContent = (index + 1) + '. ' + q.question;
+
+  let optionsDiv = document.createElement('div');
+  optionsDiv.className = 'options';
+
+  q.options.forEach((opt, i) => {
+    let btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.onclick = () => {
+      if (i === q.answer) {
+        btn.style.backgroundColor = '#c8e6c9';
+      } else {
+        btn.style.backgroundColor = '#ffcdd2';
+      }
+      explanationDiv.textContent = q.explanation;
+    };
+    optionsDiv.appendChild(btn);
+  });
+
+  let explanationDiv = document.createElement('div');
+  explanationDiv.className = 'explanation';
+
+  questionDiv.appendChild(optionsDiv);
+  questionDiv.appendChild(explanationDiv);
+  quizDiv.appendChild(questionDiv);
+});
