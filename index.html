@@ -1,8 +1,9 @@
-<div class="quiz-container">
-  <h2>🎸 Musical Milestones of the 60s & 70s 🎶</h2>
-  <div id="quiz"></div>
-</div>
-body {
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎸 Music Milestones Quiz</title>
+  <style>
+    body {
   font-family: 'Courier New', monospace;
   background: linear-gradient(to right, #fceabb, #f8b500);
   padding: 20px;
@@ -46,7 +47,15 @@ h2 {
   margin-top: 10px;
   font-style: italic;
 }
-const quiz = [
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2>🎸 Musical Milestones of the 60s & 70s 🎶</h2>
+    <div id="quiz"></div>
+  </div>
+  <script>
+    const quiz = [
   {
     question: "Which iconic music festival, held in 1969, is often considered the pinnacle of the counterculture movement?",
     options: ["Monterey Pop Festival", "Woodstock", "Isle of Wight Festival", "Altamont Free Concert"],
@@ -202,3 +211,6 @@ quiz.forEach((q, index) => {
   questionDiv.appendChild(explanationDiv);
   quizDiv.appendChild(questionDiv);
 });
+  </script>
+</body>
+</html>
