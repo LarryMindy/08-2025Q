@@ -10,6 +10,7 @@
       padding: 20px;
       color: #2c2c2c;
     }
+
     .quiz-container {
       max-width: 700px;
       margin: auto;
@@ -18,16 +19,19 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
+
     h2 {
       text-align: center;
       font-size: 2em;
       color: #d35400;
     }
+
     .question {
       font-weight: bold;
       margin-top: 25px;
       font-size: 1.1em;
     }
+
     .options button {
       display: block;
       margin: 8px 0;
@@ -39,18 +43,31 @@
       cursor: pointer;
       transition: background-color 0.3s;
     }
+
     .options button:hover {
       background-color: #ffe066;
     }
+
     .explanation {
       color: #006400;
       margin-top: 10px;
       font-style: italic;
     }
+
+    /* 🎨 Banner styling added below */
+    .banner {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
   </style>
 </head>
+
 <body>
   <div class="quiz-container">
+    <img src="August Quiz Banner.jpg" alt="August Quiz Banner" class="banner">
     <h2>Larry and Mindy's August Quiz<br>
       Musical Milestones of the 60s & 70s</h2>
     <div id="quiz"></div>
