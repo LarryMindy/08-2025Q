@@ -224,11 +224,11 @@ const scoreDisplay = document.getElementById('score');
         btn.textContent = opt;
         btn.onclick = () => {
   if (i === q.answer) {
-    btn.style.backgroundColor = '#c8e6c9';
+    btn.style.backgroundColor = '#3854FC';
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
   } else {
-    btn.style.backgroundColor = '#ffcdd2';
+    btn.style.backgroundColor = '#F53131';
   }
   explanationDiv.textContent = q.explanation;
 };
