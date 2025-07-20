@@ -262,20 +262,25 @@ const scoreDisplay = document.getElementById('score');
       q.options.forEach((opt, i) => {
         const btn = document.createElement('button');
         btn.textContent = opt;
-        btn.onclick = () => {
-  // Only allow one attempt per question
+btn.onclick = () => {
+  // If question already answered, do nothing
   const alreadyAnswered = Array.from(optionsDiv.children).some(b => b.disabled);
   if (alreadyAnswered) return;
 
+  // If correct on first try
   if (i === q.answer) {
-    btn.style.backgroundColor = '#c8e6c9';
+    btn.style.backgroundColor = '#c8e6c9'; // 💚 First-guess correct (light green)
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
   } else {
-    btn.style.backgroundColor = '#ffcdd2';
+    btn.style.backgroundColor = '#ffcdd2'; // ❌ Wrong answer (light red)
+
+    // Highlight correct answer in softer green after wrong guess
+    const correctBtn = optionsDiv.children[q.answer];
+    correctBtn.style.backgroundColor = '#d0f0c0'; // 🟩 Revealed correct (sage green, for example)
   }
 
-  // Disable all buttons so no further input allowed
+  // Disable all buttons
   Array.from(optionsDiv.children).forEach(b => b.disabled = true);
 
   explanationDiv.textContent = q.explanation;
