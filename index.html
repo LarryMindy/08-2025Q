@@ -3,67 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <title>60s & 70s Music Milestones Quiz</title>
-  <style>
-    body {
-      font-family: 'Calibri', proportional;
-      background: linear-gradient(to right, #9C2831, #9C2831);
-      padding: 20px;
-      color: #2c2c2c;
-    }
+<style>
+  body {
+    font-family: 'Calibri', proportional;
+    background: linear-gradient(to right, #9C2831, #9C2831);
+    padding: 20px;
+    color: #2c2c2c;
+  }
 
-    .quiz-container {
-      max-width: 700px;
-      margin: auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
+  .quiz-container {
+    max-width: 700px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 
-    h2 {
-      text-align: center;
-      font-size: 2em;
-      color: #d35400;
-    }
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #d35400;
+  }
 
-    .question {
-      font-weight: bold;
-      margin-top: 25px;
-      font-size: 1.1em;
-    }
+  .question {
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 1.1em;
+  }
 
+  .options button {
+    display: block;
+    margin: 8px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    background-color: #f0e68c;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.4em; /* desktop default */
+  }
+
+  .options button:hover {
+    background-color: #ffe066;
+  }
+
+  .explanation {
+    color: #006400;
+    margin-top: 10px;
+    font-style: italic;
+  }
+
+  .banner {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+
+  /* 🎯 Mobile font size adjustment */
+  @media screen and (max-width: 600px) {
     .options button {
-      display: block;
-      margin: 8px 0;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 6px;
-      background-color: #f0e68c;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      font-size: 2.4em;
+      font-size: 1.6em;
     }
-
-    .options button:hover {
-      background-color: #ffe066;
-    }
-
-    .explanation {
-      color: #006400;
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    /* 🎨 Banner styling added below */
-    .banner {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
