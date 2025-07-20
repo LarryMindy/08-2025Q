@@ -35,19 +35,20 @@
 
   .options button {
     display: block;
+    color: white;
     margin: 8px 0;
     padding: 10px;
     width: 100%;
     border: none;
     border-radius: 6px;
-    background-color: #f0e68c;
+    background-color: #857C31;
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 1.1em; /* desktop default */
   }
 
   .options button:hover {
-    background-color: #ffe066;
+    background-color: #C5B001;
   }
 
   .explanation {
@@ -269,15 +270,15 @@ btn.onclick = () => {
 
   // If correct on first try
   if (i === q.answer) {
-    btn.style.backgroundColor = '#8B9EFF'; // 💚 First-guess correct (light green)
+    btn.style.backgroundColor = '#072EF3'; // 💚 First-guess correct (light green)
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
   } else {
-    btn.style.backgroundColor = '#F53131'; // ❌ Wrong answer (light red)
+    btn.style.backgroundColor = '#CD0101'; // ❌ Wrong answer (light red)
 
     // Highlight correct answer in softer green after wrong guess
     const correctBtn = optionsDiv.children[q.answer];
-    correctBtn.style.backgroundColor = '#00C000'; // 🟩 Revealed correct (sage green, for example)
+    correctBtn.style.backgroundColor = '#039303'; // 🟩 Revealed correct (sage green, for example)
   }
 
   // Disable all buttons
