@@ -269,15 +269,15 @@ btn.onclick = () => {
 
   // If correct on first try
   if (i === q.answer) {
-    btn.style.backgroundColor = '#c8e6c9'; // 💚 First-guess correct (light green)
+    btn.style.backgroundColor = '#3854FC'; // 💚 First-guess correct (light green)
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
   } else {
-    btn.style.backgroundColor = '#ffcdd2'; // ❌ Wrong answer (light red)
+    btn.style.backgroundColor = '#F53131'; // ❌ Wrong answer (light red)
 
     // Highlight correct answer in softer green after wrong guess
     const correctBtn = optionsDiv.children[q.answer];
-    correctBtn.style.backgroundColor = '#d0f0c0'; // 🟩 Revealed correct (sage green, for example)
+    correctBtn.style.backgroundColor = '#00C000'; // 🟩 Revealed correct (sage green, for example)
   }
 
   // Disable all buttons
