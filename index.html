@@ -263,13 +263,21 @@ const scoreDisplay = document.getElementById('score');
         const btn = document.createElement('button');
         btn.textContent = opt;
         btn.onclick = () => {
+  // Only allow one attempt per question
+  const alreadyAnswered = Array.from(optionsDiv.children).some(b => b.disabled);
+  if (alreadyAnswered) return;
+
   if (i === q.answer) {
-    btn.style.backgroundColor = '#3854FC';
+    btn.style.backgroundColor = '#c8e6c9';
     score++;
     scoreDisplay.textContent = `Score: ${score}`;
   } else {
-    btn.style.backgroundColor = '#F53131';
+    btn.style.backgroundColor = '#ffcdd2';
   }
+
+  // Disable all buttons so no further input allowed
+  Array.from(optionsDiv.children).forEach(b => b.disabled = true);
+
   explanationDiv.textContent = q.explanation;
 };
         optionsDiv.appendChild(btn);
