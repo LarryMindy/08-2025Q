@@ -150,7 +150,7 @@
 
     <h2>Larry and Mindy's August Quiz<br>
       Musical Milestones of the 60s & 70s</h2>
-    <p id="score">Score: 0</p>
+    <p id="score">Correct answers (out of 20): 0</p>
     <div id="quiz"></div>
 <a href="https://quiz.larrymindy.com/08-2025.php" class="return-button" target="_blank" rel="noopener noreferrer">
   Back to the introduction page<br>and previous quizzes
@@ -319,7 +319,7 @@ btn.onclick = () => {
   if (i === q.answer) {
     btn.style.backgroundColor = '#072EF3'; // 💚 First-guess correct (light green)
     score++;
-    scoreDisplay.textContent = `Score: ${score}`;
+    scoreDisplay.textContent = `Correct answers (out of 20): ${score}`;
   } else {
     btn.style.backgroundColor = '#CD0101'; // ❌ Wrong answer (light red)
 
